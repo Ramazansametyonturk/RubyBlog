@@ -1,0 +1,40 @@
+<%= form_with(model: dersler, local: true) do |form| %>
+  <% if dersler.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(dersler.errors.count, "error") %> prohibited this dersler from being saved:</h2>
+
+      <ul>
+      <% dersler.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :Başlık %>
+    <%= form.text_field :baslik %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Yazar %>
+    <%= form.text_field :konu %>
+  </div>
+
+  <div class="field">
+    <%= form.label :aciklama %>
+    <%= form.text_area :aciklama %>
+  </div>
+  <div class="field">
+  <%= form.label :resim %>
+  <%= form.file_field :resim %>
+  </div>
+  <div class="field">
+    <%= form.label :tarih %>
+    <%= form.date_select :tarih %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

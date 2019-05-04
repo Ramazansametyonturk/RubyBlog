@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+  <tbody>
+    <% @derslers.each do |dersler| %>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <div class="post-preview">
+          <a href="post.html">
+            <h2 class="post-title">
+            <%= dersler.baslik %>
+            </h2>
+            <h3 class="post-subtitle">
+            <%= dersler.aciklama.first(250) %>...
+            </h3>
+          </a>
+          <p class="post-meta">Posted by
+             <%= dersler.konu %>
+           
+            <%= dersler.tarih %>
+            </p>
+            <button type="button" class="btn btn-light"><%= link_to 'Show', dersler %></button>
+         
+        </div>
+      </div>
+      <% end %>
+      
+    </div>
+  
+  </div>
+  
+ 
+  </tbody>
+
+
+<br>
+
